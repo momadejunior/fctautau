@@ -72,33 +72,33 @@ export default function PlayersSlider() {
 
 const videoItems = [
   {
-    img: "images/img_1.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Dogba set for Juvendu return?",
+    img: "images/jerry.jpg",
+    videoUrl: "https://media.graphassets.com/x420SlK7RhaErMjyILBT",
+    title: "Jerry - ME",
   },
   {
-    img: "images/img_2.jpg",
+    img: "images/silas.jpg",
     videoUrl: "https://vimeo.com/139714818",
-    title: "Kai Nets Double To Secure Comfortable Away Win",
+    title: "Silas - AC",
   },
   {
     img: "images/img_adam.jpg",
     videoUrl: "https://vimeo.com/139714818",
-    title: "Romolu to stay at Real Nadrid?",
+    title: "Adam - DC",
   },
   {
-    img: "images/img_1.jpg",
+    img: "images/gvena.jpg",
     videoUrl: "https://vimeo.com/139714818",
-    title: "Dogba set for Juvendu return?",
+    title: "Venancio - DD",
   },
   {
-    img: "images/img_2.jpg",
+    img: "images/ider.jpg",
     videoUrl: "https://vimeo.com/139714818",
-    title: "Kai Nets Double To Secure Comfortable Away Win",
+    title: "Ider - MC",
   },
   {
-    img: "images/img_3.jpg",
+    img: "images/momadejr.jpg",
     videoUrl: "https://vimeo.com/139714818",
-    title: "Romolu to stay at Real Nadrid?",
+    title: "Momade - DE",
   },
 ];

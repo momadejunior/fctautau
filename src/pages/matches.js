@@ -234,27 +234,11 @@ export default function Matches(){
       </div>
     </div> {/* <!-- .site-section --> */}
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-6 title-section">
-            <h2 class="heading">Videos</h2>
-          </div>
-          <div class="col-6 text-right">
-            <div class="custom-nav">
-            <a href="#" class="js-custom-prev-v2"><span class="icon-keyboard_arrow_left"></span></a>
-            <span></span>
-            <a href="#" class="js-custom-next-v2"><span class="icon-keyboard_arrow_right"></span></a>
-            </div>
-          </div>
-        </div>
-
+   
 {/* Videos */}
 
 <VideoSlider/>
 
-      </div>
-    </div>
 
     <div class="container site-section">
       <div class="row">

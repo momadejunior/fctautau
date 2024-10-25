@@ -1,12 +1,12 @@
 export default function Contact(){
-  <>
-    
-
+  return(
+    <>
+      
     <div class="hero overlay" style={{backgroundImage: "url('images/bg_3.jpg')"}}>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-9 mx-auto text-center">
-            <h1 class="text-white">Contact</h1>
+            <h1 class="text-white">Contacto</h1>
           </div>
         </div>
       </div>
@@ -58,5 +58,6 @@ export default function Contact(){
       </div>
     </div>
 
-  </>
+    </>
+  )
 }

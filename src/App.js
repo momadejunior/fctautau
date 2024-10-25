@@ -7,15 +7,13 @@ import Blog from './pages/blog';
 import Contact from './pages/contact';
 import Players from './pages/players';
 import Matches from './pages/matches';
+import Single from './pages/single';
 import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function App() {
-
-
-  const videoRef = useRef();
 
   
   return (
@@ -27,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/players" element={<Players />} />
         <Route path="/matches" element={<Matches />} />
+        <Route path="/noticia/:id" element={<Single/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
