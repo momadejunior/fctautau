@@ -55,13 +55,13 @@ export default function Blog() {
             <div className="col-lg-4 mb-4" key={index}>
               <div className="custom-media d-block">
                 <div className="img mb-4">
-                  <a href="single.html">
+                  <Link to={`/noticia/${noticia.id}`}>
                     <img src={noticia.imagem.url} alt={noticia.titulo} className="img-fluid" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="text">
                   <h3 className="mb-4">
-                    <a className="white" href="#">{noticia.titulo}</a>
+                    <Link className="white" to={`/noticia/${noticia.id}`}>{noticia.titulo}</Link>
                   </h3>
                   <p><Link to={`/noticia/${noticia.id}`} className="link">ler  mais</Link></p>
                 </div>
