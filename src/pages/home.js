@@ -14,7 +14,7 @@ export default function Home(){
                 <div id="date-countdown"></div>
                 <p>
                   <a href="#" className="btn support py-3 px-4 mr-3">Apoiar</a>
-                  <a href="#" className="more light">Ler mais</a>
+                  <a href="/about" className="more light">Ler mais</a>
                 </p>
               </div>
             </div>

@@ -8,6 +8,7 @@ import Contact from './pages/contact';
 import Players from './pages/players';
 import Matches from './pages/matches';
 import Single from './pages/single';
+import About from './pages/about';
 import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/players" element={<Players />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/noticia/:id" element={<Single/>} />
+        <Route path="/about" element={<About/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

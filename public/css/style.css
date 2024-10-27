@@ -8,6 +8,12 @@ body {
 }
 
 
+.pd{
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+
 .support{
   background: #fff !important;
 }
