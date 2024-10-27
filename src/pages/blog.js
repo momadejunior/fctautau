@@ -61,9 +61,9 @@ export default function Blog() {
                 </div>
                 <div className="text">
                   <h3 className="mb-4">
-                    <a href="#">{noticia.titulo}</a>
+                    <a className="white" href="#">{noticia.titulo}</a>
                   </h3>
-                  <p><Link to={`/noticia/${noticia.id}`}>ler  mais</Link></p>
+                  <p><Link to={`/noticia/${noticia.id}`} className="link">ler  mais</Link></p>
                 </div>
               </div>
             </div>

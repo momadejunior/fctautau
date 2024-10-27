@@ -13,7 +13,7 @@ export default function Home(){
                 <p>O FC Tau-Tau é um clube esportivo conhecido por sua paixão pelo futebol e pela promoção de talentos locais. Com raízes fortes na comunidade, o clube se destaca por envolver não apenas jogadores, mas também torcedores e moradores da região, criando uma atmosfera acolhedora e unida.</p>
                 <div id="date-countdown"></div>
                 <p>
-                  <a href="#" className="btn btn-primary py-3 px-4 mr-3">Apoiar</a>
+                  <a href="#" className="btn support py-3 px-4 mr-3">Apoiar</a>
                   <a href="#" className="more light">Ler mais</a>
                 </p>
               </div>

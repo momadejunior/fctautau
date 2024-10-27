@@ -60,7 +60,7 @@ export default function Single() {
         <div className="row">
           <div className="col-md-2"></div>
           {noticias.map((noticia, index) => (
-            <div className="col-lg-8 mb-4" key={index}>
+            <div className="col-lg-8 mb-4 white" key={index}>
               <div className="custom-media d-block">
                 <div className="img mb-4">
                   <a href="single.html">

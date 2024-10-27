@@ -10,6 +10,26 @@ export default function VideoSlider() {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1200, // For large screens
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768, // For tablets
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // For mobile devices
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   function NextArrow(props) {
