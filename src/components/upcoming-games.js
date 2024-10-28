@@ -29,7 +29,9 @@ export default function UpcomingGames() {
       body: JSON.stringify({ query }),
     })
       .then((res) => res.json())
-      .then((data) => setGames(data.data.jogos))
+      .then(data=>{
+        console.log(data)
+      })
       .catch((error) => console.error('Error fetching games:', error));
   }, []);
 
