@@ -15,7 +15,17 @@ export default function UpcomingGames(){
       url
     }
   }
-}`
+}`;
+
+
+  fetch(url,{
+    method:"POST",
+    headers:{
+      'content':'application/json',
+    },
+    body:JSON.stringify({query})
+  })
+  .then(res=>res.json())
 
   
   return(
