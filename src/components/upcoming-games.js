@@ -1,176 +1,76 @@
-export default function UpcomingGames(){
+import { useEffect, useState } from 'react';
 
+export default function UpcomingGames() {
+  const [games, setGames] = useState([]);
+  const url = 'YOUR_GRAPHQL_ENDPOINT'; // Replace with your GraphQL endpoint
 
-  const query= `query Jogos {
-  jogos {
-    id
-    equipe01
-    equipe02
-    horaDoJogo
-    localDoJogo
-    logoDaEquipe01 {
-      url
+  const query = `query Jogos {
+    jogos {
+      id
+      equipe01
+      equipe02
+      horaDoJogo
+      localDoJogo
+      logoDaEquipe01 {
+        url
+      }
+      logoDaEquipe02 {
+        url
+      }
     }
-    logoDaEquipe02 {
-      url
-    }
-  }
-}`;
+  }`;
 
+  useEffect(() => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query }),
+    })
+      .then((res) => res.json())
+      .then((data) => setGames(data.data.jogos))
+      .catch((error) => console.error('Error fetching games:', error));
+  }, []);
 
-  fetch(url,{
-    method:"POST",
-    headers:{
-      'content':'application/json',
-    },
-    body:JSON.stringify({query})
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    
-  })
-
-  
-  return(
+  return (
     <>
-      
-        <div class="row">
-          <div class="col-12 title-section">
-            <h2 class="heading">Proximo jogos</h2>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="bg-light p-4 rounded">
-              <div class="widget-body">
-                  <div class="widget-vs">
-                    <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
-                      <div class="team-1 text-center">
-                        <img src="images/logo_1.png" alt="Image"/>
-                        <h3>Football League</h3>
-                      </div>
-                      <div>
-                        <span class="vs"><span>VS</span></span>
-                      </div>
-                      <div class="team-2 text-center">
-                        <img src="images/logo_2.png" alt="Image"/>
-                        <h3>Soccer</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center widget-vs-contents mb-4">
-                  <h4>World Cup League</h4>
-                  <p class="mb-5">
-                    <span class="d-block">December 20th, 2020</span>
-                    <span class="d-block">9:30 AM GMT+0</span>
-                    <strong class="text-primary">New Euro Arena</strong>
-                  </p>
-
-                </div>
-              
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="bg-light p-4 rounded">
-              <div class="widget-body">
-                  <div class="widget-vs">
-                    <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
-                      <div class="team-1 text-center">
-                        <img src="images/logo_3.png" alt="Image"/>
-                        <h3>Football League</h3>
-                      </div>
-                      <div>
-                        <span class="vs"><span>VS</span></span>
-                      </div>
-                      <div class="team-2 text-center">
-                        <img src="images/logo_4.png" alt="Image"/>
-                        <h3>Soccer</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center widget-vs-contents mb-4">
-                  <h4>World Cup League</h4>
-                  <p class="mb-5">
-                    <span class="d-block">December 20th, 2020</span>
-                    <span class="d-block">9:30 AM GMT+0</span>
-                    <strong class="text-primary">New Euro Arena</strong>
-                  </p>
-
-                </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="bg-light p-4 rounded">
-              <div class="widget-body">
-                  <div class="widget-vs">
-                    <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
-                      <div class="team-1 text-center">
-                        <img src="images/logo_1.png" alt="Image"/>
-                        <h3>Football League</h3>
-                      </div>
-                      <div>
-                        <span class="vs"><span>VS</span></span>
-                      </div>
-                      <div class="team-2 text-center">
-                        <img src="images/logo_2.png" alt="Image"/>
-                        <h3>Soccer</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center widget-vs-contents mb-4">
-                  <h4>World Cup League</h4>
-                  <p class="mb-5">
-                    <span class="d-block">December 20th, 2020</span>
-                    <span class="d-block">9:30 AM GMT+0</span>
-                    <strong class="text-primary">New Euro Arena</strong>
-                  </p>
-
-                </div>
-              
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="bg-light p-4 rounded">
-              <div class="widget-body">
-                  <div class="widget-vs">
-                    <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
-                      <div class="team-1 text-center">
-                        <img src="images/logo_3.png" alt="Image"/>
-                        <h3>Football League</h3>
-                      </div>
-                      <div>
-                        <span class="vs"><span>VS</span></span>
-                      </div>
-                      <div class="team-2 text-center">
-                        <img src="images/logo_4.png" alt="Image"/>
-                        <h3>Soccer</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center widget-vs-contents mb-4">
-                  <h4>World Cup League</h4>
-                  <p class="mb-5">
-                    <span class="d-block">December 20th, 2020</span>
-                    <span class="d-block">9:30 AM GMT+0</span>
-                    <strong class="text-primary">New Euro Arena</strong>
-                  </p>
-
-                </div>
-              
-            </div>
-          </div>
-          
+      <div className="row">
+        <div className="col-12 title-section">
+          <h2 className="heading">Próximos Jogos</h2>
         </div>
+        {games.map((game) => (
+          <div className="col-lg-6 mb-4" key={game.id}>
+            <div className="bg-light p-4 rounded">
+              <div className="widget-body">
+                <div className="widget-vs">
+                  <div className="d-flex align-items-center justify-content-around justify-content-between w-100">
+                    <div className="team-1 text-center">
+                      <img src={game.logoDaEquipe01.url} alt={game.equipe01} />
+                      <h3>{game.equipe01}</h3>
+                    </div>
+                    <div>
+                      <span className="vs"><span>VS</span></span>
+                    </div>
+                    <div className="team-2 text-center">
+                      <img src={game.logoDaEquipe02.url} alt={game.equipe02} />
+                      <h3>{game.equipe02}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center widget-vs-contents mb-4">
+                <h4>{game.localDoJogo}</h4>
+                <p className="mb-5">
+                  <span className="d-block">{new Date(game.horaDoJogo).toLocaleDateString()}</span>
+                  <span className="d-block">{new Date(game.horaDoJogo).toLocaleTimeString()}</span>
+                  <strong className="text-primary">{game.localDoJogo}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div> {/* <!-- .site-section --> */}
     </>
-  )
+  );
 }
