@@ -99,7 +99,7 @@ export default function Matches(){
 {/*upcoming games*/}
 
 
-<UpcomingGames/>
+{/*<UpcomingGames/>*/}
    
 {/* Videos */}
 
