@@ -14,6 +14,11 @@ body {
 }
 
 
+.card-match {
+	border-radius: 5px;
+	border: 0.1px solid #80808045;
+}
+
 .support{
   background: #fff !important;
 }

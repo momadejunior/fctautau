@@ -29,7 +29,7 @@ export default function Noticias() {
       .then((res) => res.json())
       .then((data) => {
         setNoticias(data.data.noticias);
-        console.log(data.data.noticias);
+        
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
