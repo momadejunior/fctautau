@@ -1,10 +1,29 @@
 export default function UpcomingGames(){
+
+
+  const query= `query Jogos {
+  jogos {
+    id
+    equipe01
+    equipe02
+    horaDoJogo
+    localDoJogo
+    logoDaEquipe01 {
+      url
+    }
+    logoDaEquipe02 {
+      url
+    }
+  }
+}`
+
+  
   return(
     <>
       
         <div class="row">
           <div class="col-12 title-section">
-            <h2 class="heading">Upcoming Match</h2>
+            <h2 class="heading">Proximo jogos</h2>
           </div>
           <div class="col-lg-6 mb-4">
             <div class="bg-light p-4 rounded">
