@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function UpcomingGames() {
   const [games, setGames] = useState([]);
-  const url = 'YOUR_GRAPHQL_ENDPOINT'; // Replace with your GraphQL endpoint
+  const url = 'https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clsx9i67q0mac07uneq5zcr5x/master'; // Replace with your GraphQL endpoint
 
   const query = `query Jogos {
     jogos {
