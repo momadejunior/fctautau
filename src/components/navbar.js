@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'; // Use this if you're using react-router-dom
 import { FaHome, FaNewspaper, FaFutbol, FaEnvelope } from 'react-icons/fa'; // Font Awesome Icons
+import { TbPlayFootball } from "react-icons/tb";
 
 export default function Navbar() {
   return (
@@ -31,6 +32,10 @@ export default function Navbar() {
               <Link className="nav-link" to="/matches">
                 <FaFutbol /> Jogos
               </Link>
+
+              <Link className="nav-link" to="/players">
+              <TbPlayFootball /> Jogadores
+              </Link>
               <Link className="nav-link" to="/contact">
                 <FaEnvelope /> Contacto
               </Link>
@@ -52,6 +57,11 @@ export default function Navbar() {
         <Link to="/matches" className="tab-item">
           <FaFutbol />
           <span>Jogos</span>
+        </Link>
+
+        <Link to="/players" className="tab-item">
+        <TbPlayFootball /> 
+          <span>Jogadores</span>
         </Link>
         <Link to="/contact" className="tab-item">
           <FaEnvelope />
