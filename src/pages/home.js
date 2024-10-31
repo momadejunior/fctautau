@@ -1,4 +1,5 @@
 import Noticias from "../components/noticias";
+import Video from "../components/video";
 import VideoSlider from "../components/video-slider";
 
 export default function Home(){
@@ -167,6 +168,7 @@ export default function Home(){
             <VideoSlider/>
         {/* Video here */}
         <Noticias/>
+  
     </>
   ); 
 }

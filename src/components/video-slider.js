@@ -1,7 +1,50 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 export default function VideoSlider() {
+  const [videoItems, setVideoItems] = useState([]);
+
+  const url = 'https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clsx9i67q0mac07uneq5zcr5x/master';
+
+  const query = `
+    query videos {
+      sliderDeVideos {
+        id
+        imagemDeCapaDoVideo {
+          url
+        }
+        tituloDoVideo
+        video {
+          url
+        }
+      }
+    }
+  `;
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query }),
+        });
+        const data = await response.json();
+        const videos = data.data.sliderDeVideos.map(video => ({
+          img: video.imagemDeCapaDoVideo.url,
+          videoUrl: video.video.url,
+          title: video.tituloDoVideo,
+        }));
+        setVideoItems(videos);
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+      }
+    };
+    fetchVideos();
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -11,24 +54,9 @@ export default function VideoSlider() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      {
-        breakpoint: 1200, // For large screens
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768, // For tablets
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480, // For mobile devices
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -67,21 +95,12 @@ export default function VideoSlider() {
         <Slider {...settings}>
           {videoItems.map((item, index) => (
             <div className="item" key={index}>
-              <div className="video-media">
-                <img src={item.img} alt="Image" className="img-fluid" />
-                <a
-                  href={item.videoUrl}
-                  className="d-flex play-button align-items-center"
-                  data-fancybox
-                >
-                  <span className="icon mr-3">
-                    <span className="icon-play"></span>
-                  </span>
-                  <div className="caption">
-                    <h3 className="m-0">{item.title}</h3>
-                  </div>
-                </a>
-              </div>
+              <video width="100%" controls>
+                <source src={item.videoUrl} type="video/mp4" />
+                <source src="mov_bbb.ogg" type="video/ogg" />
+                Your browser does not support HTML video.
+              </video>
+              <p>{item.title}</p>
             </div>
           ))}
         </Slider>
@@ -89,36 +108,3 @@ export default function VideoSlider() {
     </div>
   );
 }
-
-const videoItems = [
-  {
-    img: "images/img_1.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Dogba set for Juvendu return?",
-  },
-  {
-    img: "images/img_2.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Kai Nets Double To Secure Comfortable Away Win",
-  },
-  {
-    img: "images/img_adam.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Romolu to stay at Real Nadrid?",
-  },
-  {
-    img: "images/img_1.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Dogba set for Juvendu return?",
-  },
-  {
-    img: "images/img_2.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Kai Nets Double To Secure Comfortable Away Win",
-  },
-  {
-    img: "images/img_3.jpg",
-    videoUrl: "https://vimeo.com/139714818",
-    title: "Romolu to stay at Real Nadrid?",
-  },
-];
